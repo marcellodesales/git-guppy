@@ -4,7 +4,8 @@ require('shelljs/global');
 var realpath = __dirname;
 var gitRoot = exec('git rev-parse --show-toplevel').output.slice(0, -1);
 var hooksDir = gitRoot + '/.git/hooks/';
-var gitHooks = require('../lib/git-hooks');
+var gitHooks = require('./../lib/hook-collector');
+
 var code = 0;
 
 gitHooks.forEach(function (hook) {
